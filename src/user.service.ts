@@ -8,7 +8,7 @@ export class UserService {
 
   async user(
     userWhereUniqueInput: Prisma.UserWhereUniqueInput,
-  ): Promise<User | null> {
+  ): Promise<User | null | string | object> {
     return this.prisma.user.findUnique({
       where: userWhereUniqueInput,
     });

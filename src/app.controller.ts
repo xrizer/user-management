@@ -25,8 +25,8 @@ export class AppController {
   }
 
   @Put('user-roles/:id')
-  async publishPost(
-    @Param('id') id: string,
+  async updateUser(
+    @Param('id') id: number,
     @Body() userData: { role: string; status: string },
   ): Promise<UserModel> {
     return this.userService.updateUser({
@@ -36,7 +36,7 @@ export class AppController {
   }
 
   @Delete('user-roles/:id')
-  async deleteUser(@Param('id') id: string): Promise<UserModel> {
+  async deleteUser(@Param('id') id: number): Promise<UserModel> {
     return this.userService.deleteUser({ id: Number(id) });
   }
 }
